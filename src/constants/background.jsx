@@ -1,6 +1,6 @@
 const weatherList = {
-    "clear sky": "clear-sky",
-    "few clouds": "clear-sky",
+    "clear sky": "clear sky",
+    "few clouds": "clear sky",
     "scattered clouds": "cloudy",
     "broken clouds": "cloudy",
     "overcast clouds": "cloudy",
