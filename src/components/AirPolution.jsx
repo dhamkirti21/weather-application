@@ -11,7 +11,7 @@ const AirPolution = () => {
     const long = useSelector((state) => state.long);
     const mode = useSelector((state) => state.mode);
     const { label, desc } = getAirQuality(rangeValue);
-    const bgColor = mode === "clear-sky" ? "bg-slate-400/20" : "bg-gray-200/40";
+    const bgColor = mode === "clear sky" ? "bg-slate-400/20" : "bg-gray-200/40";
     const dispatch = useDispatch();
 
 
@@ -43,6 +43,8 @@ const AirPolution = () => {
             <input
                 type="range"
                 min="0"
+                onChange={(e) => console.log(e.target.value)}
+                disabled
                 max={maxValue}
                 value={rangeValue}
                 className="w-full h-2 range-input"

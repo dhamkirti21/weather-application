@@ -9,15 +9,16 @@ const HourlyData = () => {
     const lat = useSelector((state) => state.lat);
     const long = useSelector((state) => state.long);
     const mode = useSelector((state) => state.mode);
-    const bgColor = mode === "clear-sky" ? "bg-slate-400/20" : "bg-gray-200/40";
+    const unit = useSelector((state) => state.unit);
+    const bgColor = mode === "clear sky" ? "bg-slate-400/20" : "bg-gray-200/40";
     const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
     const cnt = 10;
-    const showCount = isMobile ? 5 : 8;
+    const showCount = isMobile ? 4 : 8;
     const dispatch = useDispatch();
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await getHourlyData(lat, long, cnt);
+            const data = await getHourlyData(lat, long, cnt, unit);
             setWeatherData(data.slice(0, showCount + 1));
             dispatch(setForcastedData({ forcastedData: data }))
         };
@@ -25,14 +26,14 @@ const HourlyData = () => {
         if (lat && long) {
             fetchData();
         }
-    }, [lat, long, cnt]);
+    }, [lat, long, cnt, unit, dispatch]);
 
     return (
         <div className="flex flex-col gap-4">
             <div key={isMobile} className="flex flex-row gap-4 mt-12 overflow-x-auto no-scrollbar items-center justify-center min-w-[80px]">
                 {
                     weatherData.slice(0, showCount + 1).map((forecast, index) => (
-                        <div key={index} className="flex flex-col items-center gap-2 justify-center text-center min-w-[30px]">
+                        <div key={index} className="flex flex-col items-center gap-2 justify-center text-center min-w-[40px]">
                             <p className="text-xs text-white font-semibold">{forecast.date}</p>
                             <div>
                                 <img

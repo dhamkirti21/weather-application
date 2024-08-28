@@ -3,12 +3,12 @@ import BackgroundWrapper from './components/BackgroundWrapper';
 import { useSelector } from 'react-redux';
 import AnimationWrapper from "@/components/motion/ScrollUpDiv"
 import Box from './components/Box';
-
 import { memo } from 'react';
 
 function App() {
   const mode = memo(useSelector((state) => state.mode));
-  const textColor = mode === "clear-sky" || mode === "few-clouds" ? "text-white" : "text-slate-200";
+  const textColor = mode === "clear sky" || mode === "few-clouds" ? "text-white" : "text-slate-200";
+
 
   return (
     <BackgroundWrapper>
