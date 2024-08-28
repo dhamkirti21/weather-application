@@ -1,11 +1,13 @@
 import getBackground from "@/constants/background"
+import { useSelector } from "react-redux";
 
 const BackgroundWrapper = ({ children }) => {
-    const backgroundPath = getBackground("thu");
+    const mode = useSelector((state) => state.mode);
+    let backgroundPath = getBackground(mode);
 
     return (
-        <div>
-            <video autoPlay loop muted onContextMenu={(event) => {
+        <div >
+            <video key={backgroundPath} autoPlay loop muted onContextMenu={(event) => {
                 event.preventDefault();
             }} className="bg-vid">
                 <source src={backgroundPath} type="video/webm" />
