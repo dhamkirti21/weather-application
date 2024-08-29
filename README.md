@@ -2,6 +2,8 @@
 
 This is a weather application that allows users to register and log in to view real-time weather information based on their current location. The application also includes a temperature conversion feature that converts values from Celsius to Fahrenheit and vice versa.
 
+Deployed Project: https://weather-application-gamma-beige.vercel.app/
+
 ## Features
 
 - **User Authentication:** Secure login and registration functionality.
