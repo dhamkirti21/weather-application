@@ -28,50 +28,65 @@ To run this project locally on your computer, follow these steps:
 
    ```bash
    git clone https://github.com/dhamkirti21/weather-app.git
-Navigate to the Frontend Directory:
 
-bash
-Copy code
+   
+2. **Navigate to the Frontend Directory:**
+
+```bash
 cd weather-app
-Install Dependencies:
+```
 
-bash
-Copy code
+3 **Install Dependencies:**
+
+```bash
 npm install
-Start the Frontend:
+```
 
-bash
-Copy code
+4. **Insert your .env File:**
+
+5. **Start the Frontend:**
+
+```bash
 npm run dev
+```
+
 This will start the frontend development server.
 
-Backend Setup
-Navigate to the Backend Directory:
+### Backend Setup
 
-bash
-Copy code
+1. **Navigate to the Backend Directory:**
+
+```bash
 cd backend
-Install Dependencies:
+```
 
-bash
-Copy code
+2. **Install Dependencies:**
+
+```bash
 npm install
-Start the Backend:
+```
 
-bash
-Copy code
+3. **Insert your .env File:**
+
+4. **Start the Backend:**
+
+```bash
 npm start
+```
+
 This will start the backend server.
 
 Running the Application
 Once both the frontend and backend servers are running, you can open your browser and go to http://localhost:3000 to access the application.
 
-Usage
+### Usage
+
 Register a new user or log in with existing credentials.
 View the current weather information on the dashboard.
 Use the temperature conversion feature to switch between Celsius and Fahrenheit.
-Contributing
+
+### Contributing
 If you would like to contribute to this project, feel free to fork the repository and submit a pull request. Please make sure to follow the coding standards and include appropriate tests.
 
-License
+### License
 This project is licensed under the MIT License.
