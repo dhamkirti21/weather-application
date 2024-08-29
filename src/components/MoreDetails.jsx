@@ -33,9 +33,9 @@ const MoreDetails = () => {
 
     return (
         <div className="flex flex-col gap-2">
-            <div className="flex flex-wrap gap-4 justify-between">
+            <div className="flex flex-row gap-2 justify-between w-full">
                 <BoxWrapper>
-                    <div className="flex flex-col items-center justify-center p-4 w-30 md:w-40 aspect-w-1 aspect-h-1">
+                    <div className="flex flex-col items-center justify-center p-4 min-w-[100px] aspect-w-1 aspect-h-1">
                         <FaTemperatureHigh size={24} className="text-white mb-2" />
                         <p className="text-xs font-semibold text-gray-300">
                             Feels like
@@ -46,7 +46,7 @@ const MoreDetails = () => {
                     </div>
                 </BoxWrapper>
                 <BoxWrapper>
-                    <div className="flex flex-col items-center justify-center p-4 w-30 md:w-40 aspect-w-1 aspect-h-1">
+                    <div className="flex flex-col items-center justify-center p-4 min-w-[100px] aspect-w-1 aspect-h-1">
                         <PiDropSimpleFill size={24} className="text-white mb-2" />
                         <p className="text-xs font-semibold text-gray-300">
                             Humidity
@@ -57,7 +57,7 @@ const MoreDetails = () => {
                     </div>
                 </BoxWrapper>
                 <BoxWrapper>
-                    <div className="flex flex-col items-center justify-center p-4 w-30 md:w-40 aspect-w-1 aspect-h-1">
+                    <div className="flex flex-col items-center justify-center p-4 min-w-[100px] aspect-w-1 aspect-h-1">
                         <RxEyeOpen size={24} className="text-white mb-2" />
                         <p className="text-xs font-semibold text-gray-300">
                             Visibility

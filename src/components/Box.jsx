@@ -8,14 +8,16 @@ import GetLocationOnLoad from "./Location";
 import { setCurrentWeather, setWeather } from "../state";
 import ForcastedTimeline from "./ForcastedTimeline";
 import MoreDetails from "./MoreDetails";
+import { useNavigate } from "react-router";
 
 const Box = ({ mode }) => {
     const [weatherData, setWeatherData] = useState(null);
     const lat = useSelector((state) => state.lat);
     const long = useSelector((state) => state.long);
     const units = useSelector((state) => state.unit);
+    const name = useSelector((state) => state.name);
+    const navigate = useNavigate();
     const dispatch = useDispatch();
-    console.log("lat, long", lat, long);
     useEffect(() => {
 
         const fetchData = async () => {
@@ -59,6 +61,12 @@ const Box = ({ mode }) => {
                     </p>
                     <p className={`uppercase text-base md:text-lg font-medium tracking-widest`}>
                         {date}.{month}
+                    </p>
+                    <p className={`capitalize text-base md:text-lg font-medium tracking-widest`}>
+                        User: {name.split(" ")[0]}
+                    </p>
+                    <p onClick={() => { navigate("/calculate") }} className={`flex flex-row gap-2 items-center rounded-full captilize text-xs md:text-sm cursor-pointer font-medium mt-2 text-center tracking-widest p-2 px-4 bg-slate-300/20 hover:bg-slate-400/20`}>
+                        Calculate
                     </p>
                 </div>
                 <div>

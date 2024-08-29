@@ -10,7 +10,7 @@ const HourlyData = () => {
     const long = useSelector((state) => state.long);
     const mode = useSelector((state) => state.mode);
     const unit = useSelector((state) => state.unit);
-    const bgColor = mode === "clear sky" ? "bg-slate-400/20" : "bg-gray-200/40";
+    const UnitValue = unit === "metric" ? "C" : "F";
     const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
     const cnt = 10;
     const showCount = isMobile ? 4 : 8;
@@ -43,7 +43,7 @@ const HourlyData = () => {
                                     className="w-10 h-10"
                                 />
                             </div>
-                            <p className="text-normal">{forecast.temp}°C</p>
+                            <p className="text-normal">{forecast.temp}°{UnitValue}</p>
                         </div>
                     ))
                 }

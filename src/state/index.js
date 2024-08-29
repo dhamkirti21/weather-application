@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     mode: "clear sky",
+    name: "",
+    token: "",
     lat: 26.218287,
     long: 78.182831,
     unit: "metric",
@@ -18,8 +20,12 @@ export const appSlice = createSlice({
         setWeather: (state, action) => {
             state.mode = action.payload.mode || initialState.mode;
         },
+        setUserDetails: (state, action) => {
+            state.name = action.payload.user.name
+            state.token = action.payload.token
+        },
         setUnit: (state) => {
-            state.unit = state.unit === "metric" ? "standard" : "metric"
+            state.unit = state.unit === "metric" ? "imperial" : "metric"
         },
         setLocation: (state, action) => {
             if (action.payload.lat && action.payload.long) {
@@ -39,6 +45,10 @@ export const appSlice = createSlice({
         setAirQuality: (state, action) => {
             state.airQuality = action.payload.airQuality;
         },
+        logOut: (state) => {
+            state.name = initialState.name,
+                state.token = initialState.token
+        },
         setError: (state, action) => {
             state.error = action.payload.error;
         },
@@ -48,10 +58,12 @@ export const appSlice = createSlice({
 export const {
     setWeather,
     setLocation,
+    setUserDetails,
     setCurrentWeather,
     setForcastedData,
     setAirQuality,
     setUnit,
+    logOut,
     setError
 } = appSlice.actions;
 
