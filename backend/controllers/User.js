@@ -48,8 +48,8 @@ const login = async (req, res) => {
                 message: "User not found"
             })
         }
-        const isPasswordValid = verifyPassword(user.password[0], password);
-
+        const isPasswordValid = await verifyPassword(password, user.password[0]);
+        console.log(isPasswordValid)
         if (!isPasswordValid) {
 
             return res.status(401).json({
