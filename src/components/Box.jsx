@@ -62,9 +62,13 @@ const Box = ({ mode }) => {
                     <p className={`uppercase text-base md:text-lg font-medium tracking-widest`}>
                         {date}.{month}
                     </p>
-                    <p className={`capitalize text-base md:text-lg font-medium tracking-widest`}>
-                        User: {name.split(" ")[0]}
-                    </p>
+                    {
+                        name ? (
+                            <p className={`capitalize text-base md:text-lg font-medium tracking-widest`}>
+                                User: {name.split(" ")[0]}
+                            </p>
+                        ) : (<></>)
+                    }
                     <p onClick={() => { navigate("/calculate") }} className={`flex flex-row gap-2 items-center rounded-full captilize text-xs md:text-sm cursor-pointer font-medium mt-2 text-center tracking-widest p-2 px-4 bg-slate-300/20 hover:bg-slate-400/20`}>
                         Calculate
                     </p>
