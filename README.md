@@ -79,7 +79,7 @@ npm start
 This will start the backend server.
 
 Running the Application
-Once both the frontend and backend servers are running, you can open your browser and go to http://localhost:3000 to access the application.
+Once both the frontend and backend servers are running, you can open your browser and go to http://localhost:5173 to access the application.
 
 ### Usage
 
