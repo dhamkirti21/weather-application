@@ -38,7 +38,7 @@ To run this project locally on your computer, follow these steps:
 cd weather-app
 ```
 
-3 **Install Dependencies:**
+3. **Install Dependencies:**
 
 ```bash
 npm install
